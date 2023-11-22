@@ -45,8 +45,7 @@ function playGame(playerMove) {
     calculateScore();
 
     alert(
-      `You picked ${playerMove}, the computer picked ${computerMove}, ${result}. 
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
+      `You picked ${playerMove}, the computer picked ${computerMove}, ${result}.`
     );
   } else if (playerMove === "paper") {
     const computerMove = pickComputerMove();
@@ -62,8 +61,7 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
     calculateScore();
 
     alert(
-      `You picked ${playerMove}, the computer picked ${computerMove}, ${result}. 
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
+      `You picked ${playerMove}, the computer picked ${computerMove}, ${result}.`
     );
   } else if (playerMove === "rock") {
     const computerMove = pickComputerMove();
@@ -78,8 +76,9 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
 
     calculateScore();
 
-    alert(`You picked ${playerMove}, the computer picked ${computerMove}, ${result}. 
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    alert(
+      `You picked ${playerMove}, the computer picked ${computerMove}, ${result}.`
+    );
   }
 }
 

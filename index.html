@@ -17,7 +17,7 @@
         <button
           class="flex-item rock"
           onClick="
-        pickComputerMove();
+        const computerMove = pickComputerMove();
 
         let result = '';
 
@@ -30,13 +30,53 @@
         }
 
         alert(`You picked rock, the computer picked ${computerMove}, ${result}`)
-        console.log(computerMove)
+      
         "
         >
           Rock
         </button>
-        <button class="flex-item paper">Paper</button>
-        <button class="flex-item scissors">Scissors</button>
+        <button
+          class="flex-item paper"
+          onClick="
+        const computerMove = pickComputerMove();
+
+        let result = ' ';
+
+        if (computerMove === 'rock') {
+            result = 'You win!'
+        } else if (computerMove === 'paper') {
+            result = 'It\'s a tie!'
+        } else if (computerMove === 'scissors') {
+            result = 'You lose!' 
+        }
+
+        alert(`You picked paper, the computer picked ${computerMove}, ${result}`)
+        
+        "
+        >
+          Paper
+        </button>
+        <button
+          class="flex-item scissors"
+          onClick="
+        const computerMove = pickComputerMove();
+
+        let result = '';
+
+        if (computerMove === 'rock') {
+            result = 'You lose!'
+        } else if (computerMove === 'paper') {
+            result = 'You win!'
+        } else if (computerMove === 'scissors') {
+            result = 'It\'s a tie!' 
+        }
+
+        alert(`You picked scissors the computer picked ${computerMove}, ${result}`)
+       
+        "
+        >
+          Scissors
+        </button>
       </div>
     </main>
     <script src="app.js"></script>

@@ -19,3 +19,17 @@ header {
   justify-content: center;
   align-items: center;
 }
+
+.reset-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.score {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 30px;
+}

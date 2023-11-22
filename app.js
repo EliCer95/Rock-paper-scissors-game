@@ -1,7 +1,37 @@
+let score = {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
+
+let result = "";
+
+function displayScore(score) {
+  let wins = document.querySelector("#wins");
+  wins.innerHTML = score.wins;
+
+  let losses = document.querySelector("#losses");
+  losses.innerHTML = score.losses;
+
+  let ties = document.querySelector("#ties");
+  ties.innerHTML = score.ties;
+}
+
+function calculateScore() {
+  if (result === "You win!") {
+    score.wins += 1;
+  } else if (result === "You lose!") {
+    score.losses += 1;
+  } else if (result === "It's a tie!") {
+    score.ties += 1;
+  }
+
+  displayScore(score);
+  return;
+}
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
-
-  let result = "";
 
   if (playerMove === "scissors") {
     if (computerMove === "rock") {
@@ -12,14 +42,15 @@ function playGame(playerMove) {
       result = "It's a tie!";
     }
 
+    calculateScore();
+
     alert(
-      `You picked ${playerMove}, the computer picked ${computerMove}, ${result}`
+      `You picked ${playerMove}, the computer picked ${computerMove}, ${result}. 
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
     );
   } else if (playerMove === "paper") {
     const computerMove = pickComputerMove();
 
-    let result = " ";
-
     if (computerMove === "rock") {
       result = "You win!";
     } else if (computerMove === "paper") {
@@ -28,14 +59,15 @@ function playGame(playerMove) {
       result = "You lose!";
     }
 
+    calculateScore();
+
     alert(
-      `You picked ${playerMove}, the computer picked ${computerMove}, ${result}`
+      `You picked ${playerMove}, the computer picked ${computerMove}, ${result}. 
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
     );
   } else if (playerMove === "rock") {
     const computerMove = pickComputerMove();
 
-    let result = "";
-
     if (computerMove === "rock") {
       result = "It's a tie!";
     } else if (computerMove === "paper") {
@@ -44,9 +76,10 @@ function playGame(playerMove) {
       result = "You win!";
     }
 
-    alert(
-      `You picked ${playerMove}, the computer picked ${computerMove}, ${result}`
-    );
+    calculateScore();
+
+    alert(`You picked ${playerMove}, the computer picked ${computerMove}, ${result}. 
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
   }
 }
 

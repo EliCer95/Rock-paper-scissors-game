@@ -39,6 +39,23 @@
           Scissors
         </button>
       </div>
+
+      <button
+        class="reset-button"
+        onClick="
+         score.wins = 0;
+         score.losses = 0;
+         score.ties = 0;
+
+        displayScore(score);
+      "
+      >
+        Reset Score
+      </button>
+      <div class="score">
+        Wins: <span id="wins">0</span>, Losses: <span id="losses">0</span>,
+        Ties:<span id="ties">0</span>
+      </div>
     </main>
     <script src="app.js"></script>
   </body>

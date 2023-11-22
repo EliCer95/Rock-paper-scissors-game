@@ -17,20 +17,7 @@
         <button
           class="flex-item rock"
           onClick="
-        const computerMove = pickComputerMove();
-
-        let result = '';
-
-        if (computerMove === 'rock') {
-            result = 'It\'s a tie!'
-        } else if (computerMove === 'paper') {
-            result = 'You lose!'
-        } else if (computerMove === 'scissors') {
-            result = 'You win!'
-        }
-
-        alert(`You picked rock, the computer picked ${computerMove}, ${result}`)
-      
+            playGame('rock');
         "
         >
           Rock
@@ -38,20 +25,7 @@
         <button
           class="flex-item paper"
           onClick="
-        const computerMove = pickComputerMove();
-
-        let result = ' ';
-
-        if (computerMove === 'rock') {
-            result = 'You win!'
-        } else if (computerMove === 'paper') {
-            result = 'It\'s a tie!'
-        } else if (computerMove === 'scissors') {
-            result = 'You lose!' 
-        }
-
-        alert(`You picked paper, the computer picked ${computerMove}, ${result}`)
-        
+            playGame('paper');
         "
         >
           Paper
@@ -59,20 +33,7 @@
         <button
           class="flex-item scissors"
           onClick="
-        const computerMove = pickComputerMove();
-
-        let result = '';
-
-        if (computerMove === 'rock') {
-            result = 'You lose!'
-        } else if (computerMove === 'paper') {
-            result = 'You win!'
-        } else if (computerMove === 'scissors') {
-            result = 'It\'s a tie!' 
-        }
-
-        alert(`You picked scissors the computer picked ${computerMove}, ${result}`)
-       
+            playGame('scissors');
         "
         >
           Scissors

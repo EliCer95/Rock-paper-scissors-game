@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+      }
+
+      .item {
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <button
+        class="item rock"
+        onClick="
+        playGame('rock') 
+        "
+      >
+        Rock
+      </button>
+      <button
+        class="item paper"
+        onClick="
+        playGame('paper') 
+        "
+      >
+        Paper
+      </button>
+      <button
+        class="item scissors"
+        onClick="
+        playGame('scissors') "
+      >
+        Scissors
+      </button>
+    </div>
+    <script>
+      let result = " ";
+
+      function playGame(myMove) {
+        if (myMove === "rock") {
+          computerMove = pickComputerMove();
+
+          if (computerMove === "rock") {
+            result = `It's a tie`;
+          } else if (computerMove === "paper") {
+            result = `You lost`;
+          } else if (computerMove === "scissors") {
+            result = `You won`;
+          }
+          alert(
+            `You picked ${myMove}, the computer picked ${computerMove}.${result}`
+          );
+        } else if (myMove === "paper") {
+          computerMove = pickComputerMove();
+
+          if (computerMove === "rock") {
+            result = ` You won`;
+          } else if (computerMove === "paper") {
+            result = `It's a tie`;
+          } else if (computerMove === "scissors") {
+            result = `You lost`;
+          }
+          alert(
+            `You picked ${myMove}, the computer picked ${computerMove}.${result}`
+          );
+        } else if (myMove === "scissors") {
+          computerMove = pickComputerMove();
+
+          if (computerMove === "rock") {
+            result = `You won`;
+          } else if (computerMove === "paper") {
+            result = `You lost`;
+          } else if (computerMove === "scissors") {
+            result = `It's a tie`;
+          }
+          alert(
+            `You picked ${myMove}, the computer picked ${computerMove}.${result}`
+          );
+        }
+      }
+      function pickComputerMove() {
+        const randomNumber = Math.random();
+        let computerMove = " ";
+
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+          computerMove = "rock";
+        } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+          computerMove = "paper";
+        } else if (randomNumber >= 2 / 3) {
+          computerMove = "scissors";
+        }
+        return computerMove;
+      }
+    </script>
+
+    /*learning outcome: use === when comparing strings!!!! //use a separate
+    variable to store random number of a computer //run the pickComputerMove
+    function only when clicking a button!! */
+  </body>
+</html>
